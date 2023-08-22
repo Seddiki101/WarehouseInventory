@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Region?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="900.0" prefWidth="1600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="inventory.DashController">
+   <left>
+      <VBox prefHeight="600.0" prefWidth="180.0" style="-fx-background-color: #1b99d5;" BorderPane.alignment="CENTER">
+         <children>
+            <VBox fx:id="sidePanel" prefHeight="564.0" prefWidth="180.0">
+               <children>
+                  <Region prefHeight="200.0" prefWidth="200.0" />
+                  <Button mnemonicParsing="false" onAction="#switchProd" prefHeight="40.0" prefWidth="190.0" text="Produits" />
+                  <Button mnemonicParsing="false" onAction="#switchCommand" prefHeight="40.0" prefWidth="190.0" text="Commandes" />
+                  <Button mnemonicParsing="false" onAction="#switchProd" prefHeight="40.0" prefWidth="190.0" text="histoirique " />
+               </children></VBox>
+         </children>
+      </VBox>
+   </left>
+   <center>
+      <AnchorPane fx:id="centralPanel" prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="tfusername" layoutX="231.0" layoutY="225.0" prefHeight="27.0" prefWidth="200.0" promptText="nom d'utilisateur" />
+            <Label layoutX="69.0" layoutY="124.0" text="Bienvenue">
+               <font>
+                  <Font name="System Bold" size="24.0" />
+               </font>
+            </Label>
+            <Button fx:id="connectBTN" layoutX="230.0" layoutY="349.0" mnemonicParsing="false" onAction="#onConnectClicked" prefHeight="27.0" prefWidth="200.0" text="Connexion" />
+            <Label fx:id="errorLabel" layoutX="161.0" layoutY="406.0" text="mauvais nom d'utilisateur ou mot de passe . Veuillez vérifier" textFill="RED">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Label>
+            <PasswordField fx:id="tfpwd" layoutX="229.0" layoutY="286.0" prefHeight="27.0" prefWidth="203.0" promptText="mot de passe" />
+         </children></AnchorPane>
+   </center>
+</BorderPane>
