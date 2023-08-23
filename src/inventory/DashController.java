@@ -58,7 +58,7 @@ public class DashController implements Initializable {
             
             listprod = FXMLLoader.load(getClass().getResource("/viewProd/listProd.fxml"));
             listCommande = FXMLLoader.load(getClass().getResource("/viewCommande/listCommande.fxml"));
-//            listOrder = FXMLLoader.load(getClass().getResource("/viewOrders/listOrder.fxml"));
+            listOrder = FXMLLoader.load(getClass().getResource("/viewOrder/listOrder.fxml"));
 
             
         } catch (IOException ex) {
@@ -106,6 +106,7 @@ public class DashController implements Initializable {
     }
     
     
+      @FXML
             public void switchOrder()
     {
         setNode(listOrder);

@@ -20,13 +20,13 @@
       <TextField fx:id="tfqt" layoutX="739.0" layoutY="159.0" prefHeight="27.0" prefWidth="91.0" promptText="quantite" />
       <Button layoutX="841.0" layoutY="159.0" mnemonicParsing="false" onAction="#changeQuantity" text="Confirmer quantite" />
       <Button layoutX="785.0" layoutY="257.0" mnemonicParsing="false" onAction="#supprim" prefHeight="27.0" prefWidth="118.0" text="Supprimer" />
-      <Button layoutX="785.0" layoutY="300.0" mnemonicParsing="false" prefHeight="27.0" prefWidth="118.0" text="Imprimer" />
+      <Button layoutX="785.0" layoutY="300.0" mnemonicParsing="false" onAction="#printCommands" prefHeight="27.0" prefWidth="118.0" text="Imprimer" />
       <Button layoutX="788.0" layoutY="355.0" mnemonicParsing="false" onAction="#achat" prefHeight="27.0" prefWidth="118.0" text="valider" />
       <Label layoutX="156.0" layoutY="60.0" text="Total :">
          <font>
             <Font name="System Bold" size="18.0" />
          </font>
       </Label>
-      <Button layoutX="618.0" layoutY="66.0" mnemonicParsing="false" onAction="#refresh" text="Refresh" />
+      <Button layoutX="618.0" layoutY="66.0" mnemonicParsing="false" onAction="#refresh" text="rafraîchir 🔄" />
    </children>
 </AnchorPane>

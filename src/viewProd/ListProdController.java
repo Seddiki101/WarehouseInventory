@@ -30,12 +30,14 @@ import javafx.collections.transformation.SortedList;
 import javafx.event.ActionEvent;
 import javafx.event.Event;
 import javafx.fxml.FXMLLoader;
+import javafx.print.PrinterJob;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 
@@ -154,9 +156,9 @@ public class ListProdController implements Initializable {
         else{
             System.out.println("User not selected ");
                 Alert alert = new Alert(Alert.AlertType.ERROR);
-                alert.setTitle("Athlon :: Error Message");
+                alert.setTitle("SunnyRoom :: Error Message");
                 alert.setHeaderText(null);
-                alert.setContentText("Please select a user from the table ");
+                alert.setContentText("Veuillez sélectionner un produit dans le tableau ");
                 alert.showAndWait();  
         }
     }
@@ -195,9 +197,9 @@ public class ListProdController implements Initializable {
         } else {
             System.out.println("Reclamation not selected ");
             Alert alert = new Alert(Alert.AlertType.ERROR);
-            alert.setTitle("Athlon :: Error Message");
+            alert.setTitle("Sunny Room :: Error Message");
             alert.setHeaderText(null);
-            alert.setContentText("Please select Reclamation from the table ");
+            alert.setContentText("Veuillez sélectionner un produit dans le tableau ");
             alert.showAndWait();
         }
 
@@ -307,6 +309,64 @@ public void searching() {
       
   }
   
+
+
+
+
+
+
+
+public Text generatePrintContent() {
+    String storeName = "Sunny Room";
+        LocalDate currentDate = LocalDate.now();
+    String address = "Rue Environnement, Jendouba                    " +currentDate ;
+    StringBuilder content = new StringBuilder();
+    
+    content.append("\n");
+    content.append("\n");
+    
+    content.append(storeName).append("\n");
+    content.append(address).append("\n\n");
+    
+    content.append("\n");
+    content.append("\n");
+    
+    content.append("Produit").append("\t").append("\t");
+    content.append("Quantite").append("\t").append("\t");
+    content.append("Prix(U)").append("\t").append("\t");
+    
+        content.append("\n");
+        content.append("\n");
+
+    for (Produit produit : prodList) {
+        content.append(produit.getNom()).append("\t").append("\t");
+        content.append(produit.getQuantity()).append("\t").append("\t");
+        content.append(produit.getPrix()).append("\n");
+    }
+
+    Text textNode = new Text(content.toString());
+    return textNode;
+}
+
+
+
+
+
+
+@FXML
+public void printProducts(ActionEvent event) {
+    Text printContent = generatePrintContent();
+
+    PrinterJob job = PrinterJob.createPrinterJob();
+    if (job != null) {
+        boolean success = job.printPage(printContent);
+        if (success) {
+            job.endJob();
+        }
+    }
+}
+
+
   
     
 }

@@ -17,9 +17,18 @@
             <VBox fx:id="sidePanel" prefHeight="564.0" prefWidth="180.0">
                <children>
                   <Region prefHeight="200.0" prefWidth="200.0" />
-                  <Button mnemonicParsing="false" onAction="#switchProd" prefHeight="40.0" prefWidth="190.0" text="Produits" />
-                  <Button mnemonicParsing="false" onAction="#switchCommand" prefHeight="40.0" prefWidth="190.0" text="Commandes" />
-                  <Button mnemonicParsing="false" onAction="#switchProd" prefHeight="40.0" prefWidth="190.0" text="histoirique " />
+                  <Button mnemonicParsing="false" onAction="#switchProd" prefHeight="60.0" prefWidth="190.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Produits" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font></Button>
+                  <Button mnemonicParsing="false" onAction="#switchCommand" prefHeight="60.0" prefWidth="190.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="Commandes" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font></Button>
+                  <Button mnemonicParsing="false" onAction="#switchOrder" prefHeight="60.0" prefWidth="190.0" style="-fx-background-color: transparent; -fx-border-color: white; -fx-border-width: 0px 0px 2px 0px;" text="histoirique " textFill="WHITE">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font></Button>
                </children></VBox>
          </children>
       </VBox>
